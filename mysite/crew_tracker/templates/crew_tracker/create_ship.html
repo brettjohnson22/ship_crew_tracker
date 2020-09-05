@@ -1,0 +1,6 @@
+<form action="{% url 'crew_tracker:create_ship' %}" method="post">
+
+    {% csrf_token %}
+    {{form}}
+    <input type = 'submit' value='Submit'>
+</form>

@@ -36,7 +36,7 @@ class Crewman(models.Model):
     name = models.CharField(max_length=50)
     rank = models.ForeignKey(Rank, on_delete=models.CASCADE)
     dept = models.ForeignKey(Department, on_delete=models.CASCADE)
-    ship_assignment = models.ForeignKey(Starship, on_delete=models.CASCADE)
+    ship_assignment = models.ForeignKey(Starship, on_delete=models.CASCADE, blank=True, null=True)
     position = models.CharField(max_length=50)
 
     def __str__(self):

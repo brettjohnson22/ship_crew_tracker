@@ -1,0 +1,16 @@
+{% if ship_list %}
+<h1> All Ships</h1>
+<ul>{% for ship in ship_list %}
+
+    <li><a href="{% url 'crew_tracker:ship_details' ship.id %}" >{{ship.name}}</a></li>
+    {% endfor %}
+
+</ul>
+
+{% else %}
+
+<h3> No ships found.</h3>
+
+{% endif %}
+
+<a href="{% url 'crew_tracker:create_ship' %}">Add more ships</a>

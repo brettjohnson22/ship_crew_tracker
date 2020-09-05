@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Ship</title>
+    <title>Add New Crew</title>
 </head>
     <body>
 
-        <form action="{% url 'crew_tracker:create_ship' %}" method="post">
+        <form action="{% url 'crew_tracker:create_crewman' %}" method="post">
 
             {% csrf_token %}
             {{form}}

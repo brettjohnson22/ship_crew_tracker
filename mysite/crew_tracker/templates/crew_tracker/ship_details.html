@@ -1,0 +1,9 @@
+<h1>Name: {{ship.name}}</h1>
+<h3>Classification: {{ship.ship_class}} Class</h3>
+<h4>Current Crew: {{ship.crewman_set.count}} of {{ship.ship_class.crew_requirement}}</h4>
+<ul>
+{% for crew in ship.crewman_set.all %}
+    <p>{{crew.name}}</p>
+    {% endfor %}
+</ul>
+<a href="{% url 'crew_tracker:ship_index' %}">Return to Ship Index</a>

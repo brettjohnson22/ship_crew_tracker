@@ -6,4 +6,7 @@
     <p>{{crew.name}}</p>
     {% endfor %}
 </ul>
+
+<a href="{% url 'crew_tracker:create_ships_crewman' ship.id %}">Add Crew to Ship</a>
+<br />
 <a href="{% url 'crew_tracker:ship_index' %}">Return to Ship Index</a>

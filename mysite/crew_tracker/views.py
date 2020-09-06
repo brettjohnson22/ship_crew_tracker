@@ -41,8 +41,11 @@ def create_ship(request):
         return render(request, 'crew_tracker/create_ship.html', {'form': form})
 
 
-def create_crewman(request):
+def create_crewman(request, ship_id=''):
     if request.method == 'POST':
+        # if ship_id != '':
+        #     form = CrewmanCreateForm(request.POST or None, initial={'ship_assignment=ship_id'})
+        # else:
         form = CrewmanCreateForm(request.POST or None)
         if form.is_valid():
             name = request.POST.get('name', '')
@@ -59,20 +62,14 @@ def create_crewman(request):
             crew.save()
 
             form = CrewmanCreateForm()
-
-            return render(request, 'crew_tracker/create_crewman.html', {'form': form})
+            if ship_from_db:
+                return HttpResponseRedirect(reverse('crew_tracker:ship_details', kwargs={'pk': ship_assignment}))
+            else:
+                return HttpResponseRedirect(reverse('crew_tracker:ship_index'))
 
     else:
         form = CrewmanCreateForm()
+        if ship_id != '':
+            form = CrewmanCreateForm(initial={'ship_assignment': ship_id})
         return render(request, 'crew_tracker/create_crewman.html', {'form': form})
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the main index.")
-
-
-def ship_index(request):
-    return HttpResponse("Hello, world. You're at the ship index.")
-
-
-# Create your views here.

@@ -10,7 +10,8 @@ h1, h2, h3, h4, h5, p {
 body {
     background: black url("images/background.jpg") no-repeat;
     font-family: lfont;
-    color: white;
+    text-transform: uppercase;
+    color: #FFD700;
 }
 
 .texBox {

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: lfont;
+    src: url("images/lfont.ttf");
+}
+
+h1, h2, h3, h4, h5, p {
+
+}
+
+body {
+    background: black url("images/background.jpg") no-repeat;
+    font-family: lfont;
+    color: white;
+}
+
+.texBox {
+    text-align: center;
+}
+

@@ -1,8 +1,30 @@
+<head>
+      {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'crew_tracker/style.css' %}">
+</head>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
+<div class="row">
+    <div class="col-2"></div>
+<div class="col-7 textBox">
 {% if ship_list %}
 <h1> All Ships</h1>
 <ul>{% for ship in ship_list %}
 
-    <li><a href="{% url 'crew_tracker:ship_details' ship.id %}" >{{ship.name}}</a></li>
+    <h4><a href="{% url 'crew_tracker:ship_details' ship.id %}" >{{ship.name}}</a></h4>
     {% endfor %}
 
 </ul>
@@ -16,3 +38,7 @@
 <a href="{% url 'crew_tracker:create_ship' %}">Add more ships</a>
 <br />
 <a href="{% url 'crew_tracker:create_crewman' %}">Add crewmen</a>
+        <div class="col-3"></div>
+</div>
+</div>
+</div>

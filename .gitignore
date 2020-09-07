@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+mysite/crew_tracker/static/crew_tracker/images

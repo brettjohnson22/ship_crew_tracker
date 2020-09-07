@@ -3,15 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Add New Crew</title>
+          {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'crew_tracker/style.css' %}">
 </head>
     <body>
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
+<div class="row">
+    <div class="col-2"></div>
+<div class="col-7 textBox">
         <form action="{% url 'crew_tracker:create_crewman' %}" method="post">
 
             {% csrf_token %}
-            {{form}}
+            {{form.as_p}}
             <input type = 'submit' value='Submit'>
         </form>
 
     </body>
 </html>
+
+<a href="{% url 'crew_tracker:ship_index' %}">Return to Ship Index</a>
+            <div class="col-3"></div>
+</div>
+</div>
+</div>

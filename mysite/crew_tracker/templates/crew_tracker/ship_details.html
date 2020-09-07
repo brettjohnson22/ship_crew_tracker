@@ -1,12 +1,47 @@
+<head>
+      {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'crew_tracker/style.css' %}">
+</head>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
+<div class="row">
+    <div class="col-2"></div>
+<div class="col-7 textBox">
+
 <h1>Name: {{ship.name}}</h1>
 <h3>Classification: {{ship.ship_class}} Class</h3>
+<h3>Captain:{% for crew in ship.crewman_set.all %}
+{% if crew.position == 'Captain' %}
+{{crew.name}}</h3>
+{% endif %}
+{% endfor %}
 <h4>Current Crew: {{ship.crewman_set.count}} of {{ship.ship_class.crew_requirement}}</h4>
 <ul>
 {% for crew in ship.crewman_set.all %}
-    <p>{{crew.name}}</p>
+    {% if crew.position != 'Captain' %}
+    <h4>{{crew.position}} : {{crew.rank}} {{crew.name}}</h4>
+    {% endif %}
     {% endfor %}
+
 </ul>
 
 <a href="{% url 'crew_tracker:create_ships_crewman' ship.id %}">Add Crew to Ship</a>
 <br />
 <a href="{% url 'crew_tracker:ship_index' %}">Return to Ship Index</a>
+            <div class="col-3"></div>
+</div>
+</div>
+</div>

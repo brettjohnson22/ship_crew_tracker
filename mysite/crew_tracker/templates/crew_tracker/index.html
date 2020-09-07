@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Starfleet Crew Tracker</title>
+          {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'crew_tracker/style.css' %}">
+    </head>
+    <body>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-7 textBox">
+                    <h1><a href="{% url 'crew_tracker:ship_index' %}">VIEW ALL SHIPS</a></h1>
+                    <br />
+                    <h1><a href="{% url 'crew_tracker:create_crewman' %}">VIEW ALL CREWMEN</a></h1>
+                    <br />
+                    <h1><a href="{% url 'crew_tracker:create_ship' %}">ADD MORE SHIPS</a></h1>
+                    <br />
+                    <h1><a href="{% url 'crew_tracker:create_crewman' %}">ENLIST CREWMEN</a></h1>
+                    </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </body>
+</html>

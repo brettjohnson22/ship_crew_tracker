@@ -30,9 +30,9 @@
                     {% endfor %}
                 </ul>
                 <br />
-                <a href="{% url 'crew_tracker:create_ships_crewman' ship.id %}">ADD CREW TO SHIP</a>
-                <br />
-                <a href="{% url 'crew_tracker:ship_index' %}">BACK TO SHIP INDEX</a>
+                <h4><a href="{% url 'crew_tracker:assign_crewman' ship.id %}">ADD CREW TO SHIP</a></h4>
+                <h4> <a href="{% url 'crew_tracker:ship_index' %}">BACK TO SHIP INDEX</a></h4>
+                <h4><a href="{% url 'crew_tracker:home' %}">HOME</a></h4>
             </div>
             <div class="col-3"></div>
         </div>

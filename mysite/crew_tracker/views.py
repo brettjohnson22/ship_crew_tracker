@@ -43,9 +43,6 @@ def create_ship(request):
 
 def create_crewman(request, ship_id=''):
     if request.method == 'POST':
-        # if ship_id != '':
-        #     form = CrewmanCreateForm(request.POST or None, initial={'ship_assignment=ship_id'})
-        # else:
         form = CrewmanCreateForm(request.POST or None)
         if form.is_valid():
             name = request.POST.get('name', '')
@@ -61,7 +58,6 @@ def create_crewman(request, ship_id=''):
             crew = Crewman(name=name, rank=rank_from_db, dept=dept_from_db, ship_assignment=ship_from_db, position=position)
             crew.save()
 
-            form = CrewmanCreateForm()
             if ship_from_db:
                 return HttpResponseRedirect(reverse('crew_tracker:ship_details', kwargs={'pk': ship_assignment}))
             else:

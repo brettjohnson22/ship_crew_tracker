@@ -17,15 +17,15 @@
                 <h1> ALL SHIPS</h1>
                 <ul>
                     {% for ship in ship_list %}
-                    <h4><a href="{% url 'crew_tracker:ship_details' ship.id %}" >{{ship.name}}</a></h4>
+                    <li><h2><a href="{% url 'crew_tracker:ship_details' ship.id %}" >{{ship.name}}</a></h2></li>
                     {% endfor %}
                 </ul>
                 {% else %}
                 <h3> No ships found.</h3>
                 {% endif %}
-                <a href="{% url 'crew_tracker:create_ship' %}">ADD MORE SHIPS</a>
-                <br />
-                <a href="{% url 'crew_tracker:create_crewman' %}">ENLIST CREWMEN</a>
+                    <h4><a href="{% url 'crew_tracker:create_ship' %}">ADD MORE SHIPS</a></h4>
+                    <h4><a href="{% url 'crew_tracker:create_crewman' %}">ENLIST CREWMEN</a></h4>
+                    <h4><a href="{% url 'crew_tracker:home' %}">HOME</a></h4>
                 </div>
                 <div class="col-3"></div>
             </div>
